@@ -1,0 +1,29 @@
+{
+  "name": "comic-slider-admin",
+  "version": "1.0.0",
+  "description": "An admin to provide data for a comic slider",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vespa/comic-slider-admin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "mongodb": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  },
+  "bugs": {
+    "url": "https://github.com/vespa/comic-slider-admin/issues"
+  },
+  "homepage": "https://github.com/vespa/comic-slider-admin#readme"
+}
