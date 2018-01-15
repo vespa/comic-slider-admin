@@ -10,20 +10,24 @@ const Routes = require('./routes.js');
 
 
 const firstRun = (collections, db, client, callback)=>{
+
   if(collections.length === 0){
     callback();
     client.close();
     return true;
   }
-  console.log("---CREATING COLLECTION: " + collections[0] )
-  db.createCollection(collections[0], {
+   const currentCollection = collections[0].name;
+   const afterCreate = (collections[0].after)? collections[0].after: ()=>{};
+  console.log("---CREATING COLLECTION: " +  currentCollection)
+  db.createCollection(currentCollection, {
       autoIndexId: true,
       strict: true
   }, function(err, collection) {
      if(err) {
-      console.log(collections[0] + " already exists")
+      console.log(currentCollection + " already exists")
      } else{
-      console.log(collections[0] + " created")
+      afterCreate(collection);
+      console.log(currentCollection + " created");
      }
      arr = collections.slice(0);
      arr.shift();
